@@ -51,10 +51,10 @@ public class Main {
                     heapSort(numerosAleatorios);
                     break;
                 case 8:
-                    System.out.println("¡Hasta luego!");
+                    System.out.println("Fin del programa");
                     break;
                 default:
-                    System.out.println("Opción no válida. Inténtelo de nuevo.");
+                    System.out.println("Opción invalida");
             }
         } while (opcion != 8);
 
@@ -82,6 +82,16 @@ public class Main {
         }
     }
 
+    private static void mostrarNumerosOrdenados(int[] numeros) {
+        System.out.println("Números ordenados:");
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print(numeros[i] + " ");
+            if ((i + 1) % 10 == 0) {
+                System.out.println();
+            }
+        }
+    }
+
     private static void gnomeSort(int[] array) {
         int index = 0;
         while (index < array.length) {
@@ -98,6 +108,7 @@ public class Main {
             }
         }
         System.out.println("Gnome Sort completado.");
+        mostrarNumerosOrdenados(array);
     }
 
     private static void mergeSort(int[] array) {
@@ -132,6 +143,7 @@ public class Main {
             array[k++] = right[j++];
         }
         System.out.println("Merge Sort completado.");
+        mostrarNumerosOrdenados(array);
     }
 
     private static void quickSort(int[] array, int low, int high) {
@@ -168,6 +180,7 @@ public class Main {
             countingSort(array, exp);
         }
         System.out.println("Radix Sort completado.");
+        mostrarNumerosOrdenados(array);
     }
 
     private static int getMax(int[] array) {
@@ -221,6 +234,7 @@ public class Main {
             array[i] = temp;
         }
         System.out.println("Selection Sort completado.");
+        mostrarNumerosOrdenados(array);
     }
 
     private static void shellSort(int[] array) {
@@ -239,6 +253,7 @@ public class Main {
             }
         }
         System.out.println("Shell Sort completado.");
+        mostrarNumerosOrdenados(array);
     }
 
     private static void heapSort(int[] array) {
@@ -256,6 +271,7 @@ public class Main {
             heapify(array, i, 0);
         }
         System.out.println("Heap Sort completado.");
+        mostrarNumerosOrdenados(array);
     }
 
     private static void heapify(int[] array, int n, int i) {
